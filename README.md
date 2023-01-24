@@ -6,7 +6,7 @@
 
 ## Description
 
-Tactical Screen Flashlight Phone App with a Crimson Background and 5 Settings of brightness Min - 0% , Dim - 20%, Mid - %50, Bright - 80%, Max - 100%.  Crimson was the chosen because it is the color least visible from a distance.  The Fact that the screen is the light will use less battery than the flashlight.
+Tactile Screen Flashlight Phone App with a Default Red Background and 5 Settings of brightness Min - 0% , Dim - 20%, Mid - %50, Bright - 80%, Max - 100%.  Buttons give you haptic feedback whenever pressed.  Red was the chosen default because it is the color least visible from a distance.  Additional color choices include Blue, Green, and White for more options.  The Fact that the screen is the light will use less battery than the flashlight.
 
 ## Links and Resources
 
@@ -19,7 +19,9 @@ Tactical Screen Flashlight Phone App with a Crimson Background and 5 Settings of
 
 ### Features and Routes
 
-- Feature 1: Crimson Flashlight with 5 settings.
+- Feature 1: Red Flashlight with 5 settings.
+- Feature 2: Touch Feedback upon Button Press.
+- Feature 3: Add Light Color Changes (Red, Blue, Green, White).
 
 #### Tests
 

@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 export default function App() {
 
   const [permissionStatus, setPermissionStatus] = useState();
+  const [appBackgroundColor, setAppBackgroundColor] = useState('crimson');
 
   useEffect(() => {
     (async () => {
@@ -22,44 +23,73 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: appBackgroundColor }]}>
       <Text color='#fff'>Select Brightness Level</Text>
       <Button
         title="Min"
-        onPress={async() => {
+        onPress={async () => {
           await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
           await Brightness.setSystemBrightnessAsync(0);
-      }}      
+        }}
       />
       <Button
         title="Dim"
-        onPress={async() => {
+        onPress={async () => {
           await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
           await Brightness.setSystemBrightnessAsync(0.2);
-      }}  
+        }}
       />
       <Button
         title="Mid"
-        onPress={async() => {
+        onPress={async () => {
           await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
           await Brightness.setSystemBrightnessAsync(0.5);
-      }}  
+        }}
       />
       <Button
         title="Bright"
-        onPress={async() => {
+        onPress={async () => {
           await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
           await Brightness.setSystemBrightnessAsync(0.8);
-      }}  
+        }}
       />
       <Button
         title="Max"
-        onPress={async() => {
+        onPress={async () => {
           await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
           await Brightness.setSystemBrightnessAsync(1);
-      }}  
+        }}
       />
       <StatusBar style="auto" />
+      <Text color='#fff'>Select Color</Text>
+      <Button
+        title="Red"
+        onPress={async () => {
+          await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
+          setAppBackgroundColor('crimson');
+        }}
+      />
+      <Button
+        title="Blue"
+        onPress={async () => {
+          await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
+          setAppBackgroundColor('aqua');
+        }}
+      />
+      <Button
+        title="Green"
+        onPress={async () => {
+          await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
+          setAppBackgroundColor('lime');
+        }}
+      />
+      <Button
+        title="White"
+        onPress={async () => {
+          await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
+          setAppBackgroundColor('white');
+        }}
+      />
     </View>
   );
 }
@@ -67,11 +97,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'crimson',
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  Button: {
-    backgroundColor: 'red',
   },
 });
