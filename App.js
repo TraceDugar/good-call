@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import * as Brightness from 'expo-brightness';
+import * as Haptics from 'expo-haptics';
 import { useEffect, useState } from 'react';
 
 export default function App() {
@@ -25,23 +26,38 @@ export default function App() {
       <Text color='#fff'>Select Brightness Level</Text>
       <Button
         title="Min"
-        onPress={() => Brightness.setSystemBrightnessAsync(0)}
+        onPress={async() => {
+          await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
+          await Brightness.setSystemBrightnessAsync(0);
+      }}      
       />
       <Button
         title="Dim"
-        onPress={() => Brightness.setSystemBrightnessAsync(0.2)}
+        onPress={async() => {
+          await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
+          await Brightness.setSystemBrightnessAsync(0.2);
+      }}  
       />
       <Button
         title="Mid"
-        onPress={() => Brightness.setSystemBrightnessAsync(0.5)}
+        onPress={async() => {
+          await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
+          await Brightness.setSystemBrightnessAsync(0.5);
+      }}  
       />
       <Button
         title="Bright"
-        onPress={() => Brightness.setSystemBrightnessAsync(0.8)}
+        onPress={async() => {
+          await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
+          await Brightness.setSystemBrightnessAsync(0.8);
+      }}  
       />
       <Button
         title="Max"
-        onPress={() => Brightness.setSystemBrightnessAsync(1)}
+        onPress={async() => {
+          await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
+          await Brightness.setSystemBrightnessAsync(1);
+      }}  
       />
       <StatusBar style="auto" />
     </View>
