@@ -1,8 +1,21 @@
+import { useEffect, useState } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import { Stack, Button } from "@react-native-material/core";
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button } from 'react-native';
 import * as Brightness from 'expo-brightness';
 import * as Haptics from 'expo-haptics';
-import { useEffect, useState } from 'react';
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  Stack: {
+    display: 'flex',
+  },
+});
 
 export default function App() {
 
@@ -24,80 +37,86 @@ export default function App() {
 
   return (
     <View style={[styles.container, { backgroundColor: appBackgroundColor }]}>
-      <Text color='#fff'>Select Brightness Level</Text>
-      <Button
-        title="Min"
-        onPress={async () => {
-          await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
-          await Brightness.setSystemBrightnessAsync(0);
-        }}
-      />
-      <Button
-        title="Dim"
-        onPress={async () => {
-          await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
-          await Brightness.setSystemBrightnessAsync(0.2);
-        }}
-      />
-      <Button
-        title="Mid"
-        onPress={async () => {
-          await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
-          await Brightness.setSystemBrightnessAsync(0.5);
-        }}
-      />
-      <Button
-        title="Bright"
-        onPress={async () => {
-          await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
-          await Brightness.setSystemBrightnessAsync(0.8);
-        }}
-      />
-      <Button
-        title="Max"
-        onPress={async () => {
-          await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
-          await Brightness.setSystemBrightnessAsync(1);
-        }}
-      />
       <StatusBar style="auto" />
-      <Text color='#fff'>Select Color</Text>
-      <Button
-        title="Red"
-        onPress={async () => {
-          await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
-          setAppBackgroundColor('crimson');
-        }}
-      />
-      <Button
-        title="Blue"
-        onPress={async () => {
-          await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
-          setAppBackgroundColor('aqua');
-        }}
-      />
-      <Button
-        title="Green"
-        onPress={async () => {
-          await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
-          setAppBackgroundColor('lime');
-        }}
-      />
-      <Button
-        title="White"
-        onPress={async () => {
-          await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
-          setAppBackgroundColor('white');
-        }}
-      />
+      <Text color='#fff' style={{position: 'absolute', bottom: '21%'}}>Select Color</Text>
+      <Stack className="color-stack" style={{flexDirection: 'row', position: 'absolute', bottom: '15%', gap: '5%'}}>
+        <Button
+          variant="outlined"
+          title="Red"
+          onPress={async () => {
+            await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
+            setAppBackgroundColor('crimson');
+          }}
+        />
+        <Button
+          variant="outlined"
+          title="Blue"
+          onPress={async () => {
+            await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
+            setAppBackgroundColor('aqua');
+          }}
+        />
+        <Button
+          variant="outlined"
+          title="Green"
+          onPress={async () => {
+            await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
+            setAppBackgroundColor('lime');
+          }}
+        />
+        <Button
+          variant="outlined"
+          title="White"
+          onPress={async () => {
+            await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
+            setAppBackgroundColor('white');
+          }}
+        />
+      </Stack>
+      <Text color='#fff' style={{position: 'absolute', bottom: '11%'}}>Select Brightness Level</Text>
+      <Stack className="brightness-stack" style={{flexDirection: 'row', position: 'absolute', bottom: '5%'}}>
+        <Button
+          variant="outlined"
+          title="Min"
+          onPress={async () => {
+            await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
+            await Brightness.setSystemBrightnessAsync(0);
+          }}
+        />
+        <Button
+          variant="outlined"
+          title="Dim"
+          onPress={async () => {
+            await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
+            await Brightness.setSystemBrightnessAsync(0.2);
+          }}
+        />
+        <Button
+          variant="outlined"
+          title="Mid"
+          onPress={async () => {
+            await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
+            await Brightness.setSystemBrightnessAsync(0.5);
+          }}
+        />
+        <Button
+          variant="outlined"
+          title="Bright"
+          onPress={async () => {
+            await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
+            await Brightness.setSystemBrightnessAsync(0.8);
+          }}
+        />
+        <Button
+          variant="outlined"
+          title="Max"
+          onPress={async () => {
+            await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
+            await Brightness.setSystemBrightnessAsync(1);
+          }}
+        />
+      </Stack>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
