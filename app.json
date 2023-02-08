@@ -1,15 +1,16 @@
 {
   "expo": {
-    "name": "good-call",
-    "slug": "good-call",
+    "name": "tacti-light",
+    "slug": "tacti-light",
+    "description": "Screen flashlight that is easy to use with haptic feedback, also useable with phone flashlight to turn your phone into a bi-directional light.",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "assets/icons8-flashlight-64.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "assets/junior-ferreira-7esRPTt38nI-unsplash.jpg", 
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#b1b8bd"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -22,12 +23,12 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "foregroundImage": "assets/junior-ferreira-7esRPTt38nI-unsplash.jpg",
+        "backgroundColor": "#b1b8bd"
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "assets/icons8-flashlight-64.png"
     }
   }
 }
